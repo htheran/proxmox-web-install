@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despliegue de Máquina Virtual</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-syQjSGXj02PZpe3m3eJ80jZw9zjQS9Tkhnf25n4rXeFJpB8xVruxDmC2JQFa2Y2A" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1>Despliegue de Máquina Virtual</h1>
+        <form method="post">
+            <div class="mb-3">
+                <label for="vm_name" class="form-label">Nombre de la Máquina Virtual:</label>
+                <input type="text" class="form-control" id="vm_name" name="vm_name" required>
+            </div>
+            <div class="mb-3">
+                <label for="ram" class="form-label">RAM:</label>
+                <input type="text" class="form-control" id="ram" name="ram" value="{{ default_ram }}" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="cores" class="form-label">Número de Cores:</label>
+                <input type="text" class="form-control" id="cores" name="cores" value="{{ default_cores }}" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="network" class="form-label">Red:</label>
+                <select class="form-select" id="network" name="network">
+                    {% for network in networks %}
+                        <option value="{{ network }}">{{ network }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+              <label for="vm_id" class="form-label">ID de la Máquina Virtual:</label>
+              <input type="text" class="form-control" id="vm_id" name="vm_id" value="{{ vm_id }}" readonly>
+              <p>{{ vm_id }}</p> <!-- Agregamos esta línea para imprimir vm_id -->
+          </div>
+          
+          
+            <button type="submit" class="btn btn-primary">Desplegar Máquina Virtual</button>
+        </form>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</body>
+</html>
+
