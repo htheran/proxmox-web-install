@@ -1,0 +1,1 @@
+ERROR:root:Hubo un error al desplegar la máquina virtual: 401 Client Error: No ticket for url: https://10.100.0.5:8006/api2/json/nodes/test/qemu

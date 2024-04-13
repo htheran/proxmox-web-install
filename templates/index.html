@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desplegar Máquina Virtual en Proxmox</title>
+    <!-- Agregar Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Av4R2QH1keu5Lg2GV9DdoULdpgOu+gpOyLu+SMpwOukjN1Cg4l5jow0Hakxzl2J3" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Desplegar Máquina Virtual en Proxmox</h1>
+        <form action="/deploy" method="post">
+            <label for="vm_id">ID de la máquina virtual:</label>
+            <input type="text" id="vm_id" name="vm_id" required><br>
+            <label for="vm_name">Nombre de la máquina virtual:</label>
+            <input type="text" id="vm_name" name="vm_name" required><br>
+            <label for="ram">RAM (MB):</label>
+            <input type="text" id="ram" name="ram" required><br>
+            <label for="cores">Número de procesadores (cores):</label>
+            <input type="text" id="cores" name="cores" required><br>
+            <label for="hdd">Capacidad del disco duro (GB):</label>
+            <input type="text" id="hdd" name="hdd" required><br>
+            <label for="red">Red (puente):</label>
+            <input type="text" id="red" name="red" required><br>
+            <input type="submit" value="Desplegar">
+        </form>
+    </div>
+
+    <!-- Agregar scripts de Bootstrap (opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+</body>
+</html>

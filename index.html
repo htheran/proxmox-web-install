@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desplegar Máquina Virtual en Proxmox</title>
+</head>
+<body>
+    <h1>Desplegar Máquina Virtual en Proxmox</h1>
+    <form action="/deploy_vm" method="post">
+        <label for="vm_id">ID de la máquina virtual:</label><br>
+        <input type="text" id="vm_id" name="vm_id"><br>
+        <label for="vm_name">Nombre de la máquina virtual:</label><br>
+        <input type="text" id="vm_name" name="vm_name"><br>
+        <label for="ram">RAM (MB):</label><br>
+        <input type="text" id="ram" name="ram"><br>
+        <label for="cores">Número de procesadores (cores):</label><br>
+        <input type="text" id="cores" name="cores"><br>
+        <label for="disk_size">Capacidad del disco duro (GB):</label><br>
+        <input type="text" id="disk_size" name="disk_size"><br>
+        <label for="network_bridge">Red (puente):</label><br>
+        <input type="text" id="network_bridge" name="network_bridge"><br><br>
+        <input type="submit" value="Desplegar Máquina Virtual">
+    </form>
+</body>
+</html>
+
