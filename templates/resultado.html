@@ -5,18 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultado del Despliegue</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Resultado del Despliegue</h1>
-    <p>La VM se ha desplegado exitosamente con los siguientes detalles:</p>
-    <ul>
-        <li>VM ID: {{ vm_id }}</li>
-        <li>Nombre: {{ vm_name }}</li>
-        <li>RAM: {{ ram }} MB</li>
-        <li>Núcleos: {{ cores }}</li>
-        <li>Disco: {{ disk_size }} GB</li>
-        <li>Red: {{ network }}</li>
-    </ul>
+    <div class="container">
+        <h1>Resultado del Despliegue</h1>
+        <p>La VM se ha desplegado exitosamente con los siguientes detalles:</p>
+        <ul class="list-group">
+            <li class="list-group-item">VM ID: {{ vm_id }}</li>
+            <li class="list-group-item">Nombre: {{ vm_name }}</li>
+            <li class="list-group-item">RAM: {{ ram }} MB</li>
+            <li class="list-group-item">Núcleos: {{ cores }}</li>
+            <li class="list-group-item">Disco: {{ disk_size }} GB</li>
+            <li class="list-group-item">Red: {{ network }}</li>
+        </ul>
+        <a href="/" class="btn btn-primary mt-3">Desplegar otra VM</a>
+    </div>
 </body>
 </html>
-

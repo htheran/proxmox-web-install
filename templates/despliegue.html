@@ -5,26 +5,55 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Despliegue de VM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>Despliegue de Máquina Virtual</h1>
-    <form action="/deploy" method="POST">
-        <label for="vm_name">Nombre de la VM:</label>
-        <input type="text" id="vm_name" name="vm_name" required><br><br>
-        <label for="ram">RAM (MB):</label>
-        <input type="text" id="ram" name="ram" value="2048"><br><br>
-        <label for="cores">Núcleos:</label>
-        <input type="text" id="cores" name="cores" value="2"><br><br>
-        <label for="disk_size">Tamaño del disco (GB):</label>
-        <input type="text" id="disk_size" name="disk_size" value="20"><br><br>
-        <label for="network">Red:</label>
-        <select id="network" name="network">
-            {% for net in networks %}
-                <option value="{{ net }}">{{ net }}</option>
-            {% endfor %}
-        </select><br><br>
-        <button type="submit">Desplegar VM</button>
-    </form>
+    <div class="container">
+        <h1>Despliegue de Máquina Virtual</h1>
+        <form action="/deploy" method="POST">
+            <div class="form-group">
+                <label for="vm_name">Nombre de la VM:</label>
+                <input type="text" class="form-control" id="vm_name" name="vm_name" required>
+            </div>
+            <div class="form-group">
+                <label for="ram">RAM (MB):</label>
+                <input type="text" class="form-control" id="ram" name="ram" value="2048">
+            </div>
+            <div class="form-group">
+                <label for="cores">Núcleos:</label>
+                <input type="text" class="form-control" id="cores" name="cores" value="2">
+            </div>
+            <div class="form-group">
+                <label for="disk_size">Tamaño del disco (GB):</label>
+                <input type="text" class="form-control" id="disk_size" name="disk_size" value="20">
+            </div>
+            <div class="form-group">
+                <label for="network">Red:</label>
+                <select class="form-control" id="network" name="network">
+                    {% for net in networks %}
+                        <option value="{{ net }}">{{ net }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Desplegar VM</button>
+        </form>
+    </div>
 </body>
 </html>
 
